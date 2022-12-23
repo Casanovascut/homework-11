@@ -21,11 +21,15 @@ db.post('/', (req, res) => {
       tip_id: uuidv4(),
     };
 
-    readAndAppend(newNote, '../db/db.json');
+    readAndAppend(newNote, './db/db.json');
     res.json(`Tip added successfully 🚀`);
   } else {
     res.error('Error in adding tip');
   }
 });
+
+db.delete('/',(req,res)=>{
+  
+})
 
 module.exports = db;
