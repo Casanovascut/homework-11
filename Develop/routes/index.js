@@ -5,6 +5,6 @@ const dbRouter = require('./db');
 
 const app = express();
 
-app.use('/db', dbRouter);
+app.use('/notes', dbRouter);
 
 module.exports = app;
