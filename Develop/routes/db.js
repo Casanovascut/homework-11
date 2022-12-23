@@ -28,8 +28,8 @@ db.post('/', (req, res) => {
   }
 });
 
-db.delete('/',(req,res)=>{
-  
+db.delete('/notes:id',(req,res)=>{
+  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 })
 
 module.exports = db;
