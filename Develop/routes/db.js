@@ -28,8 +28,13 @@ db.post('/', (req, res) => {
   }
 });
 
-db.delete('/notes:id',(req,res)=>{
-  readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
-})
+app.delete('/api/notes/:id', (req, res) => {
+  const { id } = req.params;
+
+  const delNote = notes.findIndex(note => note.id ==id);
+
+  notes.splice(delNote, 1);
+  return res.send();
+});
 
 module.exports = db;
